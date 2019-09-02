@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Word {
+
     private String mainWord;
     private char[] letterArr;
     private char[] guessArr;
@@ -84,5 +85,11 @@ public class Word {
         this.guesses = b;
     }
 
+    public char[] getLetterArr() {
+        return letterArr;
+    }
 
+    public char[] getGuessArr() {
+        return guessArr;
+    }
 }
