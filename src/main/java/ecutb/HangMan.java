@@ -16,11 +16,15 @@ public class HangMan {
         int iGuesses = 0;
 
         do{
+            System.out.println("Guess a letter");
             iGuesses++;
             word.tryGuess(myInput.nextLine());
             if(Arrays.equals(word.getGuessArr(), word.getLetterArr())){break;}
-            System.out.println("Guesses used "+iGuesses+"/8");
+            System.out.println("\nGuesses used "+iGuesses+"/8");
         }while(iGuesses<8);
+        if(iGuesses == 8 && !Arrays.equals(word.getGuessArr(), word.getLetterArr())){
+            System.out.println("You lose!");
+        }
 
     }
 

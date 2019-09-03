@@ -30,7 +30,7 @@ public class Word {
             if(guesses.contains(input)){
                 System.out.println("Letter is already guessed, try again");
                 input = myInput.nextLine();
-            }else if(!guesses.contains(input)){
+            }else if(!guesses.contains(input) && input.length() == 1){
                 loop = false;
                 char a = input.charAt(0);
                 compareInput(a);
@@ -71,12 +71,12 @@ public class Word {
     }
 
     public void printGuessArr(){
-        System.out.println("Current standing: ");
+        System.out.println("****Current standing****");
         for(int i = 0; i < Array.getLength(guessArr); i++){
             System.out.print(guessArr[i]);
         }
         if(Arrays.equals(guessArr, letterArr)){
-            System.out.println("\n You won! Congrats =)");
+            System.out.println("\nYou won! Congrats =)");
         }
     }
 
