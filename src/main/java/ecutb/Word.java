@@ -25,11 +25,11 @@ public class Word {
         while(loop){
             if(input.length() > 1){
                System.out.println("Input only one letter. try again.");
-               input = myInput.nextLine();
+               input = myInput.nextLine().trim().toLowerCase();
             }
             if(guesses.contains(input)){
                 System.out.println("Letter is already guessed, try again");
-                input = myInput.nextLine();
+                input = myInput.nextLine().trim().toLowerCase();
             }else if(!guesses.contains(input) && input.length() == 1){
                 loop = false;
                 char a = input.charAt(0);
