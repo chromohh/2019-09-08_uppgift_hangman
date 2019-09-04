@@ -1,6 +1,8 @@
 package ecutb;
+import java.util.Arrays;
 import java.util.Scanner;
 import java.lang.reflect.Array;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class App
 {
@@ -16,13 +18,20 @@ public class App
                     HangMan game = new HangMan(word);
                     game.playGame();
                 case "2":
-                    HangMan game1 = new HangMan(word);
+                    HangMan game1 = new HangMan(randomWord());
                     game1.playGame();
                 default:
                     loop = false;
             }
         }
 
+    }
+
+    public static String randomWord(){
+        String[] wordArr = {"giraff", "elefant", "kamel", "get", "katt", "hund"};
+        int maxVal = Array.getLength(wordArr);
+        int indexArr = ThreadLocalRandom.current().nextInt(0, maxVal);
+        return wordArr[indexArr];
     }
 }
 
