@@ -8,14 +8,16 @@ public class App
 {
     public static void main( String[] args )
     {
+        System.out.println("******HANG MAN******");
         Scanner myInput = new Scanner(System.in);
-        String s = myInput.nextLine();
-        String word = "bajs";
         boolean loop = true;
         while(loop) {
+            System.out.println("1 to play 1 player game\n2 to play 2 player game with random word \nAny to exit");
+            String s = myInput.nextLine();
             switch (s) {
                 case "1":
-                    HangMan game = new HangMan(word);
+                    System.out.println("Enter you secret word");
+                    HangMan game = new HangMan(myInput.nextLine());
                     game.playGame();
                 case "2":
                     HangMan game1 = new HangMan(randomWord());

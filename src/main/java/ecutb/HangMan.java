@@ -17,8 +17,8 @@ public class HangMan {
 
         do{
             System.out.println("Guess a letter");
-            iGuesses++;
             word.tryGuess(myInput.nextLine().trim().toLowerCase());
+            if(!word.getMatch()){iGuesses++;}
             if(Arrays.equals(word.getGuessArr(), word.getLetterArr())){break;}
             System.out.println("\nGuesses used "+iGuesses+"/8");
         }while(iGuesses<8 || Arrays.equals(word.getGuessArr(), word.getLetterArr()));

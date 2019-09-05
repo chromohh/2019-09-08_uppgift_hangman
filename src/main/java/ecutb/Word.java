@@ -11,12 +11,14 @@ public class Word {
     private char[] guessArr;
     private StringBuilder addGuesses = new StringBuilder();
     private String guesses;
+    boolean match;
 
     public Word(String mainWord){
         this.mainWord = mainWord;
         this.letterArr = mainWord.toCharArray();
         this.guessArr = new char[Array.getLength(letterArr)];
         this.guesses = "";
+        this.match = match;
     }
 
     public void tryGuess(String input){
@@ -49,6 +51,7 @@ public class Word {
 
     public void compareInput(char input){
         boolean wasFound = false;
+        match = true;
         for(int i = 0; i < Array.getLength(letterArr); i++){
             if(input == letterArr[i]){
                 guessArr[i] = input;
@@ -61,6 +64,7 @@ public class Word {
         if(!wasFound)
         {
             System.out.println("Letter was not found");
+            match = false;
         }
         printGuessArr();
         setGuessArr(guessArr);
@@ -92,4 +96,6 @@ public class Word {
     public char[] getGuessArr() {
         return guessArr;
     }
+
+    public boolean getMatch(){return match;}
 }
