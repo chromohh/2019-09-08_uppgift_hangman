@@ -12,16 +12,18 @@ public class App
         Scanner myInput = new Scanner(System.in);
         boolean loop = true;
         while(loop) {
-            System.out.println("1 to play 1 player game\n2 to play 2 player game with random word \nAny to exit");
+            System.out.println("1 to play 1 player game with random word\n2 to play 2 player game \nAny to exit");
             String s = myInput.nextLine();
             switch (s) {
-                case "1":
+                case "2":
                     System.out.println("Enter you secret word");
                     HangMan game = new HangMan(myInput.nextLine());
                     game.playGame();
-                case "2":
+                    break;
+                case "1":
                     HangMan game1 = new HangMan(randomWord());
                     game1.playGame();
+                    break;
                 default:
                     loop = false;
             }

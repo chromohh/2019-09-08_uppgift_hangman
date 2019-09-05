@@ -18,7 +18,7 @@ public class Word {
         this.letterArr = mainWord.toCharArray();
         this.guessArr = new char[Array.getLength(letterArr)];
         this.guesses = "";
-        this.match = match;
+
     }
 
     public void tryGuess(String input){
@@ -89,6 +89,11 @@ public class Word {
         this.guesses = b;
     }
 
+    public void guessWord(String word){
+        //kod
+    }
+
+
     public char[] getLetterArr() {
         return letterArr;
     }
@@ -96,6 +101,7 @@ public class Word {
     public char[] getGuessArr() {
         return guessArr;
     }
+
 
     public boolean getMatch(){return match;}
 }
