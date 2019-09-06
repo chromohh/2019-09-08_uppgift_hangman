@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 public class Word {
 
-    private String mainWord;
     private char[] letterArr;
     private char[] guessArr;
     private StringBuilder addGuesses = new StringBuilder();
@@ -14,7 +13,6 @@ public class Word {
     boolean match;
 
     public Word(String mainWord){
-        this.mainWord = mainWord;
         this.letterArr = mainWord.toCharArray();
         this.guessArr = new char[Array.getLength(letterArr)];
         this.guesses = "";
@@ -89,8 +87,11 @@ public class Word {
         this.guesses = b;
     }
 
-    public void guessWord(String word){
-        //kod
+    public boolean guessWord(String word){
+        match = false;
+        if(Arrays.equals(word.toCharArray(), letterArr)){ setGuessArr(word.toCharArray()); match = true; printGuessArr(); return true; }
+       printGuessArr();
+        return false;
     }
 
 
