@@ -45,8 +45,6 @@ public class Word {
             }
     }
 
-
-
     public void compareInput(char input){
         boolean wasFound = false;
         match = true;
@@ -103,6 +101,7 @@ public class Word {
         return guessArr;
     }
 
+    public String getGuesses(){return guesses;}
 
     public boolean getMatch(){return match;}
 }
