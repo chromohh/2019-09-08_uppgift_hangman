@@ -34,7 +34,6 @@ public class HangMan {
                 break;
             }
             System.out.println("\nGuesses used " + iGuesses + "/8");
-            System.out.println("Guesses:" + word.getGuesses());
         } while (iGuesses < 8 || Arrays.equals(word.getGuessArr(), word.getLetterArr()));
         if (iGuesses == 8 && !Arrays.equals(word.getGuessArr(), word.getLetterArr())) {
             System.out.println("You lose!");

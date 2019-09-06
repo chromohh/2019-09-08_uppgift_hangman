@@ -101,7 +101,6 @@ public class Word {
         return guessArr;
     }
 
-    public String getGuesses(){return guesses;}
 
     public boolean getMatch(){return match;}
 }
