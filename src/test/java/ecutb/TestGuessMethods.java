@@ -39,6 +39,14 @@ public class TestGuessMethods {
 
         //testar metoden för att gissa hela ordet, samt att man inte kan gissa fel ord
     }
+    @Test
+    public void tryGuess_test(){
+        char[] expected = "k______".toCharArray();
+        testWord.tryGuess("k");
+        testWord.tryGuess("g");
 
+        Assert.assertArrayEquals(expected, testWord.getGuessArr());
+        // testar så att den bara lägger till k och inte g, denna metoden gör mer saker också men de är inte testbara då den tar userinputs med scannern.
+    }
 
 }
